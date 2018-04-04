@@ -27,5 +27,13 @@ public class Memcache extends AbstractCache {
 	public Object get(String key) throws Exception {
 		return memcacheClient.get(key);
 	}
+	
+  public String getString(String key) throws Exception {
+    return String.valueOf(memcacheClient.get(key));
+  }
+  
+  public void setString(String key, int seconds, String s) throws Exception {
+    memcacheClient.set(key, seconds, s);
+  }
 
 }
